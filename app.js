@@ -3,6 +3,10 @@ import fs from 'node:fs/promises';
 import bodyParser from 'body-parser';
 import express from 'express';
 
+import * as meals from './data/available-meals.json' assert { type: "json" };
+import * as orders from './data/orders.json' assert { type: "json" };
+
+
 const app = express();
 
 app.use(bodyParser.json());
@@ -17,8 +21,9 @@ app.use((req, res, next) => {
 
 app.get('/meals', async (req, res) => {
   console.log('Code executed')
-  const meals = await fs.readFile('./data/available-meals.json', 'utf8');
-  res.json(JSON.parse(meals));
+  console.log(meals)
+  //const meals = await fs.readFile(meals, 'utf8');
+  res.json(meals);
 });
 
 app.post('/orders', async (req, res) => {
