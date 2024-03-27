@@ -17,6 +17,7 @@ app.use((req, res, next) => {
 
 app.get('/meals', async (req, res) => {
   const meals = await fs.readFile('./public/data/available-meals.json', 'utf8');
+  console.log(__dirname)
   res.json(JSON.parse(meals));
 });
 
