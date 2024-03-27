@@ -1,4 +1,4 @@
-import macAndCheese from '../images/mac-and-cheese.jpg';
+import macAndCheese from '../public/images/mac-and-cheese.jpg';
 
 const mealsData = [
   {
