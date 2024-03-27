@@ -1,5 +1,5 @@
 const fs = require('fs').promises;
-const ordersData = require('./data/orders.json');
+const ordersData = require('./data/orders.js');
 const mealsData = require('./data/available-meals.js');
 const bodyParser = require('body-parser');
 const express = require('express');
@@ -51,10 +51,8 @@ app.post('/orders', async (req, res) => {
     ...orderData,
     id: (Math.random() * 1000).toString(),
   };
-  const orders = await fs.readFile('./data/orders.json', 'utf8');
-  const allOrders = JSON.parse(orders);
+  allOrders = ordersData;
   allOrders.push(newOrder);
-  await fs.writeFile(ordersData, JSON.stringify(allOrders));
   res.status(201).json({ message: 'Order created!' });
 });
 
