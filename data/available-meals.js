@@ -4,35 +4,35 @@ const mealsData = [
     "name": "Mac & Cheese",
     "price": "8.99",
     "description": "Creamy cheddar cheese mixed with perfectly cooked macaroni, topped with crispy breadcrumbs. A classic comfort food.",
-    "image": "images/mac-and-cheese.jpg"
+    "image": "https://foodbackend-z.vercel.app/images/mac-and-cheese.jpg"
   },
   {
     "id": "m2",
     "name": "Margherita Pizza",
     "price": "12.99",
     "description": "A classic pizza with fresh mozzarella, tomatoes, and basil on a thin and crispy crust.",
-    "image": "images/margherita-pizza.jpg"
+    "image": "https://foodbackend-z.vercel.app/images/margherita-pizza.jpg"
   },
   {
     "id": "m3",
     "name": "Caesar Salad",
     "price": "7.99",
     "description": "Romaine lettuce tossed in Caesar dressing, topped with croutons and parmesan shavings.",
-    "image": "images/caesar-salad.jpg"
+    "image": "https://foodbackend-z.vercel.app/images/caesar-salad.jpg"
   },
   {
     "id": "m4",
     "name": "Spaghetti Carbonara",
     "price": "10.99",
     "description": "Al dente spaghetti with a creamy sauce made from egg yolk, pecorino cheese, pancetta, and pepper.",
-    "image": "images/spaghetti-carbonara.jpg"
+    "image": "https://foodbackend-z.vercel.app/images/spaghetti-carbonara.jpg"
   },
   {
     "id": "m5",
     "name": "Veggie Burger",
     "price": "9.99",
     "description": "A juicy veggie patty served on a whole grain bun with lettuce, tomato, and a tangy sauce.",
-    "image": "images/veggie-burger.jpg"
+    "image": "https://foodbackend-z.vercel.app/images/veggie-burger.jpg"
   },
   {
     "id": "m6",
