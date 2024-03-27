@@ -141,3 +141,4 @@ const mealsData = [
   }
 ]
 
+module.exports = mealsData;

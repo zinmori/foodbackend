@@ -17,8 +17,7 @@ app.use((req, res, next) => {
 });
 
 app.get('/meals', async (req, res) => {
-  console.log(__dirname)
-  res.json(JSON.parse({mealsData}));
+  res.json(mealsData.map((meal) => ({...meal})));
 });
 
 app.post('/orders', async (req, res) => {
