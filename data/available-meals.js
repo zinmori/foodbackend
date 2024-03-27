@@ -1,12 +1,10 @@
-import macAndCheese from '../public/images/mac-and-cheese.jpg';
-
 const mealsData = [
   {
     "id": "m1",
     "name": "Mac & Cheese",
     "price": "8.99",
     "description": "Creamy cheddar cheese mixed with perfectly cooked macaroni, topped with crispy breadcrumbs. A classic comfort food.",
-    "image": {macAndCheese}
+    "image": "https://foodbackend-z.vercel.app/images/mac-and-cheese.jpg"
   },
   {
     "id": "m2",
