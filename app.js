@@ -1,5 +1,4 @@
 const fs = require('fs').promises;
-const mealsData = require('./data/available-meals.js');
 const ordersData = require('./data/orders.json');
 const bodyParser = require('body-parser');
 const express = require('express');
@@ -17,7 +16,8 @@ app.use((req, res, next) => {
 });
 
 app.get('/meals', async (req, res) => {
-  res.json(JSON.parse(mealsData));
+  const meals = await fs.readFile('./public/data/available-meals.json', 'utf8');
+  res.json(JSON.parse(meals));
 });
 
 app.post('/orders', async (req, res) => {
