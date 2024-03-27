@@ -10,14 +10,6 @@
     { 
       "src": "/(.*)", 
       "dest": "index.js"
-    },
-    { 
-      "src": "/meals", 
-      "dest": "index.js"
-    },
-    { 
-      "src": "/orders", 
-      "dest": "index.js"
     }
   ]
 }
