@@ -1,4 +1,4 @@
-[
+const mealsData = [
   {
     "id": "m1",
     "name": "Mac & Cheese",
