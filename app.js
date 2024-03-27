@@ -1,5 +1,6 @@
 const fs = require('fs').promises;
-
+const mealsData = require('./data/available-meals.json');
+const ordersData = require('./data/orders.json');
 const bodyParser = require('body-parser');
 const express = require('express');
 
@@ -16,7 +17,7 @@ app.use((req, res, next) => {
 });
 
 app.get('/meals', async (req, res) => {
-  const meals = await fs.readFile('./data/available-meals.json', 'utf8');
+  const meals = await fs.readFile(mealsData, 'utf8');
   res.json(JSON.parse(meals));
 });
 
@@ -54,7 +55,7 @@ app.post('/orders', async (req, res) => {
   const orders = await fs.readFile('./data/orders.json', 'utf8');
   const allOrders = JSON.parse(orders);
   allOrders.push(newOrder);
-  await fs.writeFile('./data/orders.json', JSON.stringify(allOrders));
+  await fs.writeFile(ordersData, JSON.stringify(allOrders));
   res.status(201).json({ message: 'Order created!' });
 });
 
