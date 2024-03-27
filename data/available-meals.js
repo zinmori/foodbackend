@@ -1,4 +1,4 @@
-const macAndCheese = require('../public/images/mac-and-cheese.jpg');
+import macAndCheese from '../images/mac-and-cheese.jpg';
 
 const mealsData = [
   {
