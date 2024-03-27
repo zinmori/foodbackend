@@ -1,11 +1,7 @@
-import fs from 'node:fs/promises';
+const fs = require('fs').promises;
 
-import bodyParser from 'body-parser';
-import express from 'express';
-
-import * as meals from './data/available-meals.json' assert { type: "json" };
-import * as orders from './data/orders.json' assert { type: "json" };
-
+const bodyParser = require('body-parser');
+const express = require('express');
 
 const app = express();
 
@@ -20,22 +16,17 @@ app.use((req, res, next) => {
 });
 
 app.get('/meals', async (req, res) => {
-  console.log('Code executed')
-  console.log(meals)
-  //const meals = await fs.readFile(meals, 'utf8');
-  res.json(meals);
+  const meals = await fs.readFile('./data/available-meals.json', 'utf8');
+  res.json(JSON.parse(meals));
 });
 
 app.post('/orders', async (req, res) => {
   const orderData = req.body.order;
 
-  if (
-    orderData === null ||
-    orderData.items === null ||
-    !Array.isArray(orderData.items) ||
-    orderData.items.length === 0
-  ) {
-    return res.status(400).json({ message: 'Missing data.' });
+  if (orderData === null || orderData.items === null || !Array.isArray(orderData.items) || orderData.items.length === 0) {
+    return res
+      .status(400)
+      .json({ message: 'Missing data.' });
   }
 
   if (
@@ -75,4 +66,4 @@ app.use((req, res) => {
   res.status(404).json({ message: 'Not found' });
 });
 
-app.listen(3000)
+module.exports = app;

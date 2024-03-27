@@ -7,8 +7,9 @@
     }
   ],
   "routes": [
-    { "src": "/meals", "dest": "/app.js" },
-    { "src": "/orders", "dest": "/app.js" },
-    { "src": "/(.*)", "dest": "/app.js" }
+    { 
+      "src": "/(.*)", 
+      "dest": "index.js"
+    }
   ]
 }
